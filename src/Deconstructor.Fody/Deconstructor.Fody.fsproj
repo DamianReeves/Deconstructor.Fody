@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>b7cf63fe-2343-40de-a722-2fed96ca53d7</ProjectGuid>
+    <ProjectGuid>68337904-88df-46f7-a403-3b32ecc4d2a2</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Deconstructor.Fody</RootNamespace>
     <AssemblyName>Deconstructor.Fody</AssemblyName>
@@ -43,7 +43,12 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Deconstructor.Fody.fs" />
+    <Compile Include="Logger.fs" />
+    <Compile Include="MethodInformation.fs" />
+    <Compile Include="PropertyInformation.fs" />
+    <Compile Include="TypeInformation.fs" />
+    <Compile Include="TypeProcessor.fs" />
+    <Compile Include="ModuleWeaver.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
   <PropertyGroup>
@@ -72,23 +77,23 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
-        <Reference Include="Mono.Cecil">
-          <HintPath>..\..\..\packages\FodyCecil\lib\net40\Mono.Cecil.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
         <Reference Include="Mono.Cecil.Mdb">
-          <HintPath>..\..\..\packages\FodyCecil\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+          <HintPath>..\..\packages\FodyCecil\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Pdb">
-          <HintPath>..\..\..\packages\FodyCecil\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+          <HintPath>..\..\packages\FodyCecil\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Rocks">
-          <HintPath>..\..\..\packages\FodyCecil\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+          <HintPath>..\..\packages\FodyCecil\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\..\packages\FodyCecil\lib\net40\Mono.Cecil.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
