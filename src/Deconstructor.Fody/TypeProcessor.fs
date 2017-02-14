@@ -14,7 +14,7 @@ type TypeProcessingParameters = {
   Module:ModuleDefinition
   /// Get the properties to process
   Properties:PropertyDefinition list 
-  NumberOfProperties:int}
+  NumberOfProperties:int }
   
 
 let selectTypesForProcessing (types:TypeDefinition seq) = query {

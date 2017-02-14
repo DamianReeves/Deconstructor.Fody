@@ -6,6 +6,7 @@ NUGET
       FSharp.Core (>= 3.1.2.5)
       Mono.Cecil (>= 0.9.6.4)
     FAKE (4.50)
+    FAKE.Lib (4.50)
     FodyCecil (1.29.4)
     FSharp.Core (4.0.0.1)
     Mono.Cecil (0.9.6.4)
